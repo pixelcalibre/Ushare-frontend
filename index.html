@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>Ushare-Share Anything Easily</title>
+    <link rel="stylesheet" href="./public/css/style.css">
+    
+</head>
+<body>
+    <img src="./public/images/logo.png" alt="UShare logo" class="ushare-logo">
+    <h3 class="designer">Ⓒ Rakshith R Nayak</h3>
+    <section class="upload-body">
+        <div class="drop-body">
+         <div class="icon-body ">
+             <img src="./public/images/file-icon.svg" alt="file-icon" class="center" draggable="false">
+             <img src="./public/images/file-icon.svg" alt="file-icon" class="right" draggable="false">
+             <img src="./public/images/file-icon.svg" alt="file-icon" class="left" draggable="false">
+         </div>
+         <input type="file" id="browse">
+         <div class="text-body">
+             Drag and Drop your files here or, <span class="browse-btn">Browse</span>
+         </div>
+        </div>
+        <div class="progress-body">
+            <div class="progress-bar ">
+                <div class="inner-div">
+                    <div class="title">Uploading...</div>
+                    <div class="percent-body"><span id="percent" >0</span>%</div>
+            </div>
+        </div>
+        </div>
+        <div class="share-body">
+            <p class="expire">Link expires in 24 hrs</p>
+            <div class="input-body">
+                <input type="text" id="fileURL" readonly value="">
+                <img src="./public/images/copy-icon.svg" alt="copy icon" id="copy-icon">
+            </div>
+            <p>Or Sendvia Email</p>
+            <div class="email-body">
+                <form id="email-form">
+                    <div class="field">
+                        <label for="sender">Your Email</label>
+                    <input type="email" required name="from-email" id="sender">
+                    </div>
+                    <div class="field">
+                        <label for="receiver">Receiver's Email</label>
+                    <input type="email" required name="to-email" id="receiver">
+                    </div>
+                    <button type="submit" >Send</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+    <div class="bg-upload">
+
+    </div>
+    <div class="toast-alert">
+        Copied to Clipboard
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

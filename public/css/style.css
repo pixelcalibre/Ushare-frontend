@@ -1,0 +1,235 @@
+:root {
+  --main-bg-color: #580aff;
+  --border-color: #b492fb;
+  --body-width: 500px;
+}
+body,
+html {
+  font-family: system-ui;
+  background: var(--main-bg-color);
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+body,
+.drop-body,
+.upload-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body {
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.upload-body {
+  background: #f9f9f9;
+  border-radius: 25px;
+  box-shadow: 0px 20px 20px #3f3d42;
+}
+
+.drop-body {
+  width: 500px;
+  min-height: 200px;
+  border: 2px dashed var(--border-color);
+  margin: 30px;
+  border-radius: 10px;
+  transition: all 200ms ease;
+}
+.icon-body {
+  width: 75px;
+  height: 100px;
+  position: relative;
+}
+.icon-body img {
+  width: 75px;
+  position: absolute;
+  transform-origin: bottom;
+  transition: transform 250ms ease-in-out;
+}
+.ondrag.drop-body {
+  background: #e2d6f9;
+  border-color: var(--main-bg-color);
+}
+.icon-body .right,
+.icon-body .left {
+  filter: grayscale(0.5);
+  transform: scale(0.8);
+}
+.icon-body .center {
+  z-index: 1;
+}
+/* following three class styles are to provide animations to the file-icon when a file is dragged on it */
+.ondrag .icon-body .right {
+  transform: rotate(10deg) translateX(20px) scale(0.8);
+}
+.ondrag .icon-body .left {
+  transform: rotate(-10deg) translateX(-20px) scale(0.8);
+}
+.ondrag .icon-body .center {
+  transform: translateY(-5px);
+}
+/* to hide the choose file button*/
+#browse {
+  display: none;
+}
+.browse-btn {
+  color: rgb(76, 116, 202);
+  cursor: pointer;
+  font-weight: 500;
+}
+.progress-body {
+  width: var(--body-width);
+  height: 70px;
+  margin-bottom: 25px;
+  border: 1px solid var(--main-bg-color);
+  border-radius: 10px;
+  position: relative;
+  display: none;
+}
+
+.progress-body .progress-bar {
+  width: 0;
+  height: 100%;
+  background: var(--main-bg-color);
+  /* transform: scaleX(0); */
+  transform-origin: left;
+  border-radius: 2%;
+  transition: width 0.25s linear;
+  position: absolute;
+}
+
+.progress-body .inner-div {
+  position: absolute;
+  z-index: 1;
+  margin: 10px 15px;
+  width: calc(100%-30px);
+}
+.percent-body {
+  font-size: 12px;
+  margin: 5px;
+  opacity: 0.8;
+}
+.share-body {
+  width: 500px;
+  margin-bottom: 20px;
+  display: none;
+}
+p {
+  opacity: 0.7;
+  text-align: center;
+}
+.share-body .input-body {
+  position: relative;
+}
+.share-body .input-body input {
+  width: 100%;
+  border: 2px dashed var(--main-bg-color);
+  border-radius: 6px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  font-size: 20px;
+  background: #b492fb;
+  color: #0000008c;
+}
+.input-body img {
+  position: absolute;
+  height: 22px;
+  width: 30px;
+  right: 7px;
+  top: 12px;
+  opacity: 0.6;
+  cursor: pointer;
+  background: #b492fb;
+}
+.email-body {
+  display: flex;
+  align-items: center;
+}
+.email-body form {
+  width: 100%;
+  border: 2px solid var(--border-color);
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+.email-body .field {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  width: 400px;
+}
+.email-body label {
+  font-size: 18px;
+}
+.email-body input {
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+}
+.email-body input:focus {
+  outline: none;
+}
+.email-body button {
+  font-size: 18px;
+  padding: 8px 40px;
+  margin-top: 15px;
+  background: #b492fb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.toast-alert {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, 60px);
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #f9f9f9;
+  /* from boxshadows.com */
+  box-shadow: 0px 2px 5px 0px #3f3d42, 0px 1px 10px 0px #3f3d42,
+    0px 2px 4px -1px #3f3d42;
+  font-size: 18px;
+  transition: transform ease-in-out0.25s;
+}
+.bg-upload {
+  background: url(../images/Upload-image.svg) no-repeat center;
+  background-size: contain;
+  height: 40vh;
+  width: 40vw;
+}
+.ushare-logo {
+  position: absolute;
+  height: 150px;
+  width: 400px;
+  object-fit: contain;
+  top: 0px;
+  left: 1/2vw;
+}
+.designer {
+  position: absolute;
+  right: 1/2vw;
+  bottom: 0px;
+  color: gray;
+  opacity: 0.7;
+  font-size: 10px;
+}
+@media screen and (max-width: 900px) {
+  :root {
+    --body-width: 320px;
+  }
+  .bg-upload {
+    display: none;
+  }
+  .email-body .field {
+    flex-direction: column;
+    width: 300px;
+  }
+}
