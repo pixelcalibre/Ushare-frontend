@@ -232,4 +232,12 @@ p {
     flex-direction: column;
     width: 300px;
   }
+  .ushare-logo {
+    position: absolute;
+    height: 100px;
+    width: 300px;
+    object-fit: contain;
+    top: 0px;
+    left: 1/2vw;
+  }
 }
