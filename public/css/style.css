@@ -234,8 +234,28 @@ p {
   }
   .ushare-logo {
     position: absolute;
-    height: 100px;
+    height: 80px;
     width: 300px;
+    object-fit: contain;
+    top: 0px;
+    left: 1/2vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  :root {
+    --body-width: 320px;
+  }
+  .bg-upload {
+    display: none;
+  }
+  .email-body .field {
+    flex-direction: column;
+    width: 300px;
+  }
+  .ushare-logo {
+    position: absolute;
+    height: 100px;
+    width: 200px;
     object-fit: contain;
     top: 0px;
     left: 1/2vw;
