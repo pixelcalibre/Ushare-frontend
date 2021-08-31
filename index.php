@@ -1,5 +1,5 @@
 <?php
 
-include_once("index.html")
+header("Loaction: ./index.html")
 
 ?>
