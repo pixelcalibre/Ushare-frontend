@@ -1,5 +1,5 @@
 <?php
 
-header("Loaction: ./index.html")
+header("Loaction: /index.html")
 
 ?>
