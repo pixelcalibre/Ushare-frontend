@@ -1,7 +1,7 @@
 const dropBody= document.querySelector(".drop-body");
 const browseBtn=document.querySelector(".browse-btn");
 const browse = document.querySelector("#browse");
-const host = "https://innshare.heroku.com/";
+const host = "https://innshare.herokuapp.com/";
 //this si to upload the file URL
 const uploadURL= `${host}api/files`;
 const emailURL= `${host}api/files/send`;
