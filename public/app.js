@@ -8,6 +8,8 @@ const emailURL= `${host}api/files/send`;
 
 
 const progressBar=document.querySelector(".progress-bar");
+
+//changing few links
 const progressPercent=document.querySelector("#percent");
 const progressBody=document.querySelector(".progress-body")
 const fileURL=document.querySelector("#fileURL");
