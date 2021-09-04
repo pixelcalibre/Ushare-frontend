@@ -97,16 +97,16 @@ const resetBrowseValue =()=>{
 const updateProgress = (e) => {
     let percentage =Math.round ((e.loaded)/(e.total));
     percentage*=100;
-    console.log(percentage);
     progressBar.style.width = `${percentage}%`
     progressPercent.innerText=percentage;
 }
 
-const onSuccessfulUpload = ({file:url}) => {
-console.log(url);
+const onSuccessfulUpload = (res) => {
 browse.value=""
 emailForm[2].removeAttribute("disabled");
 progressBody.style.display="none";
+
+const {file :url} = JSON.parse(res);
 shareBody.style.display="block";
 fileURL.value=url;
 };
